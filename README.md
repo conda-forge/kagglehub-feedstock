@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@ngam](https://github.com/ngam/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
