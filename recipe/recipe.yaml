@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: kagglehub
+  version: 0.3.13
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/kagglehub-${{ version }}.tar.gz
+  sha256: d3c8b6250627d665096cd91a9487559bf5ed61be607eaf63d14511b20eea646e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - requests
+    - tqdm
+    - packaging
+    - pyyaml
+
+tests:
+  - python:
+      imports:
+        - kagglehub
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Access Kaggle resources anywhere
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/Kaggle/kagglehub
+
+extra:
+  recipe-maintainers:
+    - ngam
+    - synapticarbors
+
