@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: kagglehub
-  version: "0.4.3"
+  version: "1.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/kagglehub-${{ version }}.tar.gz
-  sha256: 7969ae7574f5524dfa0f4fdb362229e1187cd5ea0dc0ef6e7ea5ca23478877ee
+  sha256: 21dc25d0279e2071f8b97cd9e1393d003ea5e054ea48f1e8139a39e4771e9a8d
 
 build:
   number: 0
